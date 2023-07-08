@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="minus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="minus-symbol" transform="translate(0.000000, 6.000000)" fill="#A9AFB5" fill-rule="nonzero">
+            <path d="M0.52078125,1.84859375 C0.230625,1.84859375 0,1.6109375 0,1.32078125 C0,1.030625 0.230625,0.8 0.52078125,0.8 L14.203125,0.8 C14.4932812,0.8 14.7314062,1.030625 14.7314062,1.32078125 C14.7314062,1.6109375 14.4932812,1.8490625 14.203125,1.8490625 L0.52078125,1.8490625 L0.52078125,1.84859375 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
