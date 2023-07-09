@@ -64,17 +64,24 @@
     </script>
     <script>
         let url = new URL(window.location.href);
-        let ref = url.searchParams.get("ref");
+        let email = url.searchParams.get("email");
+        let partnerId = url.searchParams.get("id");
 
-        if (ref !== null) {
-            localStorage.setItem('ref', ref);
-            document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
+        if (email !== null) {
+            localStorage.setItem('email', email);
+            //document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
         }
 
-        if(localStorage.getItem('ref')) {
-            let ref = localStorage.getItem('ref');
-            document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
+        if (partner_id !== null) {
+            localStorage.setItem("id", partnerId);
         }
+        
+        email = localStorage.getItem('email');
+        partnerId = localStorage.getItem('id');
+        $(document).ready(function() {
+            $('.eye-mini-info-show span').eq(1).text(email);
+            $('.eye-mini-info-show span').eq(2).text(`ID: ${partnerId}`);
+        });
     </script>
 </head>
 
@@ -701,14 +708,14 @@
                                         <a class="btn btn-xs btn-default waves-effect waves-light btn-eye-mini-info-hide"
                                             href="javascript:;" title="Masquer/afficher"><span
                                                 class="glyphicon glyphicon-eye-close"></span></a>
-                                        <span>berdos1989@protonmail.com</span>
-                                        <span>ID: 1091284053</span>
+                                        <span></span>
+                                        <span></span>
                                     </span>
                                     <span style="display: none" class="mini-info-content eye-mini-info-hide">
                                         <a class="btn btn-xs btn-default waves-effect waves-light btn-eye-mini-info-show"
                                             href="javascript:;" title="Masquer/afficher"><span
-                                                class="glyphicon glyphicon-eye-open"></span></a> <span>ber****</span>
-                                        <span>ID: 1091****</span>
+                                                class="glyphicon glyphicon-eye-open"></span></a> <span>*******</span>
+                                        <span>ID: ********</span>
                                     </span>
                                     <a class="btn btn-xs btn-default waves-effect waves-light btn-clipboard"
                                         href="javascript:;" title="Copier le lien"
