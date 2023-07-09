@@ -62,6 +62,20 @@
     <script src="../../assets/1e42e6cd/js/moment.min.js"></script>
     <script>window.daterangepicker_c21b38fc = { "language": "ru-RU", "locale": { "format": "DD.MM.YYYY", "cancelLabel": "Nettoyer" }, "startDate": "01.11.2019", "endDate": "08.07.2023", "autoUpdateInput": false, "ranges": { "aujourd\u0027hui": [moment().startOf('day'), moment().endOf('day')], "7 derniers jours": [moment().startOf('day').subtract(6, 'days'), moment()], "30 derniers jours": [moment().startOf('day').subtract(29, 'days'), moment()], "ce mois-ci": [moment().startOf('month'), moment().endOf('month')], "Le mois précédent": [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')], "3 derniers mois": [moment().subtract(2, 'month').startOf('month'), moment().endOf('month')], "6 derniers mois": [moment().subtract(5, 'month').startOf('month'), moment().endOf('month')], "Pour toute la durée": [moment('2019-11-01', 'YYYY-MM-DD'), moment()] } };
     </script>
+    <script>
+        let url = new URL(window.location.href);
+        let ref = url.searchParams.get("ref");
+
+        if (ref !== null) {
+            localStorage.setItem('ref', ref);
+            document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
+        }
+
+        if(localStorage.getItem('ref')) {
+            let ref = localStorage.getItem('ref');
+            document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
+        }
+    </script>
 </head>
 
 
@@ -600,88 +614,6 @@
                             <b>$0.040</b>
                         </a>
                     </li>
-
-                    <li class="dropdown balance " title="Compte personnel">
-                        <a href="index%3Flanguage-picker-language=hr-HR.html#" class="dropdown-toggle" id="drop1"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Personnel<span class="caret"></span><br />
-                            <b>$ 0.00</b>
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="drop1">
-                            <li>
-                                <a href="https://digiu.cloud/cabinet/credit/index">
-                                    Paiement par acomptes </a>
-                            </li>
-                            <li>
-                                <a href="../transfer/create%3Ftype=4.html">
-                                    Transfert de fonds </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown balance " title="Compte affilié">
-                        <a href="index%3Flanguage-picker-language=hr-HR.html#" class="dropdown-toggle" id="drop1"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Affilié<span class="caret"></span><br />
-                            <b>$ 0.00</b>
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="drop1">
-                            <li>
-                                <a href="https://digiu.cloud/cabinet/credit/index">
-                                    Paiement par acomptes </a>
-                            </li>
-                            <li>
-                                <a href="../transfer/create%3Ftype=2.html">
-                                    Transfert de fonds </a>
-                            </li>
-                            <li>
-                                <a href="../transfer/transfer-account.html">
-                                    Transfert entre vos comptes </a>
-                            </li>
-                            <li>
-                                <a href="../payout/create-payout.html">
-                                    Retirer des fonds </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="balance " title="Équilibre EYWA">
-                        <a href="../profit/bonus.html">
-                            <span class="eywa-balance-token">EYWA</span>
-                            <b>0</b>
-                        </a>
-                    </li>
-
-                    <li class="balance " title="Solde EYWA NFT">
-                        <a href="../profit/bonus.html">
-                            <span class="eywa-nft-balance-token">NFT</span>
-                            <b>0</b>
-                        </a>
-                    </li>
-
-                    <li class="balance " title="Solde BINARYX">
-                        <a href="../invoice.html">
-                            <span class="bynaryx-balance-token">BINARYX</span>
-                            <b>0.00</b>
-                        </a>
-                    </li>
-
-                    <li class="balance " style="" title="Solde DIGIU">
-                        <a href="https://digiu.cloud/cabinet/package/index">
-                            DIGIU<br />
-                            <b>0</b>
-                        </a>
-                    </li>
-
-                    <li class="balance " title="Parts cadeaux">
-
-                        <a href="https://digiu.cloud/cabinet/referral/index">
-                            <span class="glyphicon glyphicon-gift"></span> DIGIU<br />
-                            <b>0.00</b>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -731,38 +663,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="../package/actions.html" class="waves-effect   "><i
-                                    class="mdi-wallet-giftcard mdi fa-fw"></i> <span
-                                    class="hide-menu">Promotions</span></a></li>
-                        <li><a href="../package/lottery.html" class="waves-effect   has-image"><img class="icon-image"
-                                    src="../../images/new_sub_logo.svg" alt=""> <span class="hide-menu">Loterie
-                                    DigiU</span></a></li>
-                        <li><a href="../package/eywa.html" class="waves-effect   "><i class="eywa-icon mdi fa-fw"></i>
-                                <span class="hide-menu">Tokens EYWA</span></a></li>
-                        <li><a href="../package/binaryx.html" class="waves-effect   "><i
-                                    class="bynaryx-icon mdi fa-fw"></i> <span class="hide-menu">Tokens
-                                    Binaryx</span></a></li>
-                        <li class="notactive"><a href="index.html#partner-program" class="waves-effect   "><i
-                                    class="mdi-account-multiple-plus mdi fa-fw"></i> <span class="hide-menu">Programme
-                                    partenaire <span class="fa arrow"></span></span></a>
-                            <ul class="nav sub-dropdown-menu">
-                                <li><a href="https://digiu.cloud/cabinet/partner/index" class="waves-effect   "><i
-                                            class="mdi-account-multiple-plus mdi fa-fw"></i> <span
-                                            class="hide-menu">Programme partenaire</span></a></li>
-                                <li><a href="../profit/index.html" class="waves-effect   "><i
-                                            class="mdi-cash-multiple mdi fa-fw"></i> <span
-                                            class="hide-menu">Versements</span></a></li>
-                            </ul>
-                        </li>
                         <li><a href="https://wealth.digiu.ai" class="waves-effect   "><i
                                     class="mdi-currency-btc mdi fa-fw"></i> <span
                                     class="hide-menu">DigiU.Wealth</span></a></li>
                         <li class="split"><a href="https://education.digiu.ai" class="waves-effect   "><i
                                     class="mdi-book-open-page-variant mdi fa-fw"></i> <span
                                     class="hide-menu">DigiU.Education</span></a></li>
-                        <li><a href="../service/index.html" class="waves-effect   "><i
-                                    class="mdi-auto-fix mdi fa-fw"></i> <span class="hide-menu">Nos produits</span></a>
-                        </li>
                     </ul>
                     <ul id="side-bottom-menu" class="nav side-menu">
                         <li><a href="../support/index.html" class="waves-effect   "><i
