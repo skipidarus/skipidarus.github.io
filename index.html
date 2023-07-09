@@ -62,27 +62,6 @@
     <script src="../../assets/1e42e6cd/js/moment.min.js"></script>
     <script>window.daterangepicker_c21b38fc = { "language": "ru-RU", "locale": { "format": "DD.MM.YYYY", "cancelLabel": "Nettoyer" }, "startDate": "01.11.2019", "endDate": "08.07.2023", "autoUpdateInput": false, "ranges": { "aujourd\u0027hui": [moment().startOf('day'), moment().endOf('day')], "7 derniers jours": [moment().startOf('day').subtract(6, 'days'), moment()], "30 derniers jours": [moment().startOf('day').subtract(29, 'days'), moment()], "ce mois-ci": [moment().startOf('month'), moment().endOf('month')], "Le mois précédent": [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')], "3 derniers mois": [moment().subtract(2, 'month').startOf('month'), moment().endOf('month')], "6 derniers mois": [moment().subtract(5, 'month').startOf('month'), moment().endOf('month')], "Pour toute la durée": [moment('2019-11-01', 'YYYY-MM-DD'), moment()] } };
     </script>
-    <script>
-        let url = new URL(window.location.href);
-        let email = url.searchParams.get("email");
-        let partnerId = url.searchParams.get("id");
-
-        if (email !== null) {
-            localStorage.setItem('email', email);
-            //document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
-        }
-
-        if (partnerId !== null) {
-            localStorage.setItem("id", partnerId);
-        }
-        
-        email = localStorage.getItem('email');
-        partnerId = localStorage.getItem('id');
-        $(document).ready(function() {
-            $('.eye-mini-info-show span').eq(1).text(email);
-            $('.eye-mini-info-show span').eq(2).text(`ID: ${partnerId}`);
-        });
-    </script>
 </head>
 
 
@@ -1029,6 +1008,27 @@
             jQuery('#modal-dialog-level-up').modal({ "show": false, "backdrop": "static", "keyboard": false });
             jQuery('#modal-dialog-vap').modal({ "show": false, "backdrop": "static", "keyboard": false });
         });</script>
+    <script>
+        let url = new URL(window.location.href);
+        let email = url.searchParams.get("email");
+        let partnerId = url.searchParams.get("id");
+
+        if (email !== null) {
+            localStorage.setItem('email', email);
+            //document.body.innerHTML += `<p>Привет, ${ref}!</p>`;
+        }
+
+        if (partnerId !== null) {
+            localStorage.setItem("id", partnerId);
+        }
+
+        email = localStorage.getItem('email');
+        partnerId = localStorage.getItem('id');
+        $(document).ready(function () {
+            $('.eye-mini-info-show span').eq(1).text(email);
+            $('.eye-mini-info-show span').eq(2).text(`ID: ${partnerId}`);
+        });
+    </script>
 </body>
 
 </html>
