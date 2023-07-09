@@ -953,8 +953,6 @@
         </div>
     </div>
 
-
-    <script src="https://lib.usedesk.ru/secure.usedesk.ru/widget_161060_29297.js"></script>
     <script src="https://digiu.cloud/assets/c3cb14b0/jquery.min.js"></script>
     <script src="https://digiu.cloud/assets/dd582024/yii.js"></script>
     <script src="https://digiu.cloud/assets/f782f3e3/js/bootstrap.min.js"></script>
@@ -1030,19 +1028,6 @@
             jQuery('#modal-dialog-road-show').modal({ "show": false, "backdrop": "static", "keyboard": false });
             jQuery('#modal-dialog-level-up').modal({ "show": false, "backdrop": "static", "keyboard": false });
             jQuery('#modal-dialog-vap').modal({ "show": false, "backdrop": "static", "keyboard": false });
-
-            $(document).on("click", "a[href='/cabinet/dashboard/index']", function (e) {
-                e.preventDefault();
-                openModal(
-                    "null",
-                    "modal-lg",
-                    "Bienvenue sur votre compte DigiU personnel !",
-                    "/cabinet/promo/first-modal"
-                );
-                $(document).off("click", "a[href='/cabinet/dashboard/index']");
-                return false;
-            });
-
         });</script>
 </body>
 
