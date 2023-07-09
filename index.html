@@ -641,7 +641,7 @@
                 <div class="row bg-title">
                     <div class="col-sm-6 hidden-xs">
                         <h4 class="page-title">
-                            <span>Accueil</span>
+                            <span>Account</span>
                         </h4>
                     </div>
                     <div class="col-sm-6 col-xs-12 text-right inner-row">
@@ -693,10 +693,10 @@
                     </div>
                     <div class="col-xs-12">
                     </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="white-box">
                             <h3 class="box-title">
-                                Investissement personnel </h3>
+                                Personal investments </h3>
                             <ul class="list-inline two-part">
                                 <li><i class="ti-bag text-danger"></i></li>
                                 <li class="text-right">
@@ -704,17 +704,13 @@
                                         $0 </div>
                                 </li>
                             </ul>
-
-                            <span id="popover_x2x" class="info-popover-icon" data-placement="left" data-html="true"
-                                data-toggle="popover"
-                                data-content="Investissements personnels - Le montant total des fonds investis pour ce compte afin d’acheter des parts, quel que soit le mode de paiement."></span>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
                         <div class="white-box">
                             <h3 class="box-title">
-                                Chiffre d'affaires total </h3>
+                                Total turnover </h3>
                             <ul class="list-inline two-part">
                                 <li><i class="ti-wallet text-primary"></i></li>
                                 <li class="text-right">
@@ -722,28 +718,6 @@
                                         $0 </div>
                                 </li>
                             </ul>
-
-                            <span id="popover_cOc" class="info-popover-icon" data-placement="left" data-html="true"
-                                data-toggle="popover"
-                                data-content="Le chiffre d&#039;affaires total est le montant total des investissements propres et partenaires dans la structure d&#039;un partenaire particulier, y compris tous les niveaux et branches de l&#039;arbre de ce partenaire sans restrictions sur la profondeur de la structure."></span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">
-                                Chiffre d'affaires enregistré </h3>
-                            <ul class="list-inline two-part">
-                                <li><i class="ti-clipboard text-info"></i></li>
-                                <li class="text-right">
-                                    <div class="counter">
-                                        $0 </div>
-                                </li>
-                            </ul>
-
-                            <span id="popover_dXd" class="info-popover-icon" data-placement="left" data-html="true"
-                                data-toggle="popover"
-                                data-content="Le montant total des investissements en fonds propres et partenaires dans la structure pour ce compte, qui est pris en compte lors de l&#039;augmentation du niveau de l&#039;investisseur. Dans une branche de la structure, le montant du chiffre d&#039;affaires affiché ne peut excéder le Chiffre clé de calcul du chiffre d&#039;affaires affiché."></span>
                         </div>
                     </div>
                 </div>
@@ -824,6 +798,132 @@
                                     </div>
                                 </form>
                                 <div>&nbsp;</div>
+
+                                <form id="payment-form" class="form-vertical kv-form-bs3"
+                                    action="/cabinet/deposit/payment" method="post" role="form">
+                                    <input type="hidden" name="_csrf-frontend"
+                                        value="NIkLKRwdDsJUZ3KTrKjcnWDQeB3yp01HpIP0Gf2NWeBVyElYaVZRlABUAtz8wbrzMrcxbZTeLyLGt8xXrcAShw==">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-8">
+                                            <h4 class="text-bold">Enter amount in USD</h4>
+
+                                            <div class="form-group highlight-addon field-paymentform-amount required">
+
+
+                                                <div class="input-group"><span
+                                                        class="alert-success input-group-addon">$</span><input
+                                                        type="text" id="paymentform-amount" class="form-control"
+                                                        name="PaymentForm[amount]" value="100"
+                                                        placeholder="Enter the amount to be replenished"
+                                                        aria-required="true"></div>
+
+                                                <div class="help-block help-block-error"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="select-type-payment">
+                                                <h5 class="text-bold">Choose the replenishment method</h5>
+
+                                                <div class="form-group field-paymentform-typepayment required">
+
+
+                                                    <input type="hidden" name="PaymentForm[typePayment]" value="">
+                                                    <div id="paymentform-typepayment" role="radiogroup"
+                                                        aria-required="true">
+                                                        <div class="checkbox_group_raw payment-type-item item-0"><input
+                                                                type="radio" id="payment_type_counter_0"
+                                                                name="PaymentForm[typePayment]" value="7"><label
+                                                                for="payment_type_counter_0"><img
+                                                                    src="/images/payment/perfect_money.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-commission">Commission: 2%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-1"><input
+                                                                type="radio" id="payment_type_counter_1"
+                                                                name="PaymentForm[typePayment]" value="13"><label
+                                                                for="payment_type_counter_1"><img
+                                                                    src="/images/payment/tether_trc.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-additional">TRC20</div>
+                                                                <div class="payment-type-commission">Commission: 0%
+                                                                </div>
+                                                                <div class="payment-type-additional1">USDT</div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-3"><input
+                                                                type="radio" id="payment_type_counter_3"
+                                                                name="PaymentForm[typePayment]" value="1"><label
+                                                                for="payment_type_counter_3"><img
+                                                                    src="/images/payment/bitcoin.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-commission">Commission: 0%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-4"><input
+                                                                type="radio" id="payment_type_counter_4"
+                                                                name="PaymentForm[typePayment]" value="9"><label
+                                                                for="payment_type_counter_4"><img
+                                                                    src="/images/payment/icon_adv_cash.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-additional">across Payeer</div>
+                                                                <div class="payment-type-commission">Commission: 1%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-5"><input
+                                                                type="radio" id="payment_type_counter_5"
+                                                                name="PaymentForm[typePayment]" value="9"><label
+                                                                for="payment_type_counter_5"><img
+                                                                    src="/images/payment/visa-mastercard-credit.png"
+                                                                    height="40" alt="">
+                                                                <div class="payment-type-additional">across Payeer</div>
+                                                                <div class="payment-type-commission">Commission: 1%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-6"><input
+                                                                type="radio" id="payment_type_counter_6"
+                                                                name="PaymentForm[typePayment]" value="9"><label
+                                                                for="payment_type_counter_6"><img
+                                                                    src="/images/payment/payeer.png" height="40" alt="">
+                                                                <div class="payment-type-commission">Commission: 1%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-7"><input
+                                                                type="radio" id="payment_type_counter_7"
+                                                                name="PaymentForm[typePayment]" value="10"><label
+                                                                for="payment_type_counter_7"><img
+                                                                    src="/images/payment/dogecoin.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-commission">Commission: 0%
+                                                                </div>
+                                                            </label></div>
+                                                        <div class="checkbox_group_raw payment-type-item item-8"><input
+                                                                type="radio" id="payment_type_counter_8"
+                                                                name="PaymentForm[typePayment]" value="2"><label
+                                                                for="payment_type_counter_8"><img
+                                                                    src="/images/payment/ethereum.png" height="40"
+                                                                    alt="">
+                                                                <div class="payment-type-commission">Commission: 0%
+                                                                </div>
+                                                            </label></div>
+                                                    </div>
+
+                                                    <div class="help-block"></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <button type="submit"
+                                                class="btn btn-inverse waves-effect waves-light">Pay</button>
+                                        </div>
+                                    </div>
+
+                                </form>
 
                                 <table class="table table-high">
 
